@@ -1,0 +1,59 @@
+# ════════════════════════════════════════════════
+#   KAIROS-HEDGE — SYSTEM CONFIGURATION
+#   Adjust thresholds here. Never touch code.
+# ════════════════════════════════════════════════
+
+llm:
+  primary_provider: groq
+  fallback_order: [groq, gemini, openrouter, ollama]
+  groq:
+    model: llama-3.3-70b-versatile
+    max_tokens: 1000
+    temperature: 0.3
+  gemini:
+    model: gemini-1.5-flash
+    max_tokens: 1000
+    temperature: 0.3
+  openrouter:
+    model: meta-llama/llama-3.3-70b-instruct:free
+    max_tokens: 1000
+    temperature: 0.3
+  ollama:
+    model: llama3
+    base_url: http://localhost:11434
+    max_tokens: 1000
+    temperature: 0.3
+  concurrency_limit: 3
+  retry_attempts: 3
+  retry_delay_seconds: 5
+
+kairos:
+  nse_universe_size: 500
+  min_kairos_score: 65
+  top_n_shortlist: 10
+  min_market_cap_cr: 500
+  min_avg_volume: 100000
+  lookback_days: 365
+
+hedge_fund:
+  min_consensus_confidence: 70
+  min_buy_agents: 10
+  sl_percent: 5.0
+  target_1_percent: 10.0
+  target_2_percent: 18.0
+  hold_weeks_min: 1
+  hold_weeks_max: 4
+
+output:
+  save_json: true
+  save_html_report: true
+  send_telegram: true
+  sync_google_sheets: true
+  output_dir: output/
+  archive_dir: output/reports/
+
+trading:
+  style: positional_swing
+  market: NSE
+  currency: INR
+  skip_week_message: "No valid trade setups this week. Stand aside. ✋"

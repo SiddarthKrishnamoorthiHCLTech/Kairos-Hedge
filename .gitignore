@@ -1,0 +1,51 @@
+# ════════════════════════════════════════════════
+#   KAIROS-HEDGE — .gitignore
+# ════════════════════════════════════════════════
+
+# ── Secrets (NEVER commit these) ──────────────
+.env
+credentials/*.json
+credentials/*.p12
+credentials/*.pem
+
+# ── Python ─────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual Environment ─────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Generated Outputs (runtime data) ───────────
+output/logs/
+output/weekly_report.json
+output/shortlist.json
+output/reports/
+
+# ── IDE / Editor ───────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Jupyter ────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Testing ─────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
